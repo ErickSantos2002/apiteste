@@ -13,7 +13,7 @@ async def inserir(payload: InserirDados):
     conn = await get_conn()
     try:
         await conn.execute(
-            "INSERT INTO teste_api (nome, idade) VALUES ($1, $2)",
+            "INSERT INTO public.teste_api (nome, idade) VALUES ($1, $2)",
             payload.nome, payload.idade
         )
         return {"status": "inserido"}
