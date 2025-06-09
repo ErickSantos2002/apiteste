@@ -4,13 +4,14 @@ FROM python:3.11-slim
 # Diretório de trabalho dentro do container
 WORKDIR /app
 
-# Copia o conteúdo da pasta app para dentro do container
+# Copia o conteúdo da pasta app (apenas ela) para dentro do container
 COPY app/ .
 
 # Instala as dependências
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expõe a porta
+# Expor porta
 EXPOSE 8000
 
 # Comando para rodar o FastAPI
