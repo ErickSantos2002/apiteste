@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from app.database import get_conn
-from app.schemas import InserirDados
+from database import get_conn
+from schemas import InserirDados
 
 router = APIRouter()
 
